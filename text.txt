@@ -1,0 +1,48 @@
+To test the routes, you can use Postman or Thunder Client.
+
+Endpoints
+Register User:
+
+Method: POST
+URL: http://localhost:3000/auth/register
+Body:
+json
+Copy code
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+Login User:
+
+Method: POST
+
+URL: http://localhost:3000/auth/login
+
+Body:
+
+json
+Copy code
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+Response:
+
+json
+Copy code
+{
+  "message": "Login successful",
+  "token": "JWT_TOKEN"
+}
+Access Protected Route:
+
+Method: GET
+URL: http://localhost:3000/auth/protected
+Headers: x-auth-token: JWT_TOKEN (Use the token received from login)
+Response:
+json
+Copy code
+{
+  "message": "Protected route accessed"
+}
